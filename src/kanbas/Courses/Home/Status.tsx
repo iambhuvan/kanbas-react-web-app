@@ -1,5 +1,8 @@
 import { MdDoNotDisturbAlt } from "react-icons/md";
 import { FaCheckCircle } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+//import "./Status.css"; 
+import { faFileImport,faMagnifyingGlass,faList,faCircleInfo,faChartSimple,faMessage } from "@fortawesome/free-solid-svg-icons";
 export default function CourseStatus() {
   return (
     <div id="wd-course-status" style={{ width: "300px" }}>
@@ -18,26 +21,26 @@ export default function CourseStatus() {
           </button>
         </div>
       </div><br />
-      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        Import Existing Content 
+      <button className="btn btn-lg btn-secondary w-100 mt-1 text-start " >
+      <FontAwesomeIcon icon={faFileImport} /> Import Existing Content 
       </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        Import from Commons 
+      <FontAwesomeIcon icon={faFileImport} /> Import from Commons 
       </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        Choose Home Page 
+      <FontAwesomeIcon icon={faMagnifyingGlass} /> Choose Home Page 
       </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        View Course Stream
+      <FontAwesomeIcon icon={faList} /> View Course Stream
       </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        New Announcement
+      <FontAwesomeIcon icon={faCircleInfo} /> New Announcement
       </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        New Analytics
+      <FontAwesomeIcon icon={faChartSimple} /> New Analytics
       </button>
       <button className="btn btn-lg btn-secondary w-100 mt-1 text-start">
-        View Course Notifications
+      <FontAwesomeIcon icon={faMessage} /> View Course Notifications
       </button>
       
     </div>

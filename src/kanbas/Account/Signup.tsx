@@ -6,7 +6,9 @@ export default function Signup() {
     return (
         <div className="container d-flex justify-content-center align-items-center">
             <div style={{ width: '200px' }}>
-                <h1 className="mb-4">Signup</h1>
+                <h1 className="mb-4">
+                  Signup
+                </h1>
                 <form>
                     <div className="mb-3">
                         <input 

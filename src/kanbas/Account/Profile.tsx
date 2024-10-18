@@ -8,7 +8,7 @@ export default function Profile() {
                     <div className="mb-3">
                         <input 
                             id="wd-username" 
-                            value="alice" 
+                            value="Username" 
                             placeholder="Username" 
                             className="form-control" 
                         />
@@ -16,7 +16,7 @@ export default function Profile() {
                     <div className="mb-3">
                         <input 
                             id="wd-password" 
-                            value="123" 
+                            value="Password" 
                             placeholder="Password"
                             className="form-control" 
                         />
@@ -24,7 +24,7 @@ export default function Profile() {
                     <div className="mb-3">
                         <input 
                             id="wd-firstname" 
-                            value="Alice" 
+                            value="Firstname" 
                             placeholder="First Name" 
                             className="form-control" 
                         />
@@ -32,7 +32,7 @@ export default function Profile() {
                     <div className="mb-3">
                         <input 
                             id="wd-lastname" 
-                            value="Wonderland" 
+                            value="Lastname" 
                             placeholder="Last Name" 
                             className="form-control" 
                         />
@@ -48,7 +48,7 @@ export default function Profile() {
                     <div className="mb-3">
                         <input 
                             id="wd-email" 
-                            value="alice@wonderland.com" 
+                            value="EmailID" 
                             type="email" 
                             placeholder="Email" 
                             className="form-control" 
@@ -56,6 +56,7 @@ export default function Profile() {
                     </div>
                     <div className="mb-3">
                         <select id="wd-role" className="form-select">
+                        <option value="" disabled selected>Select Role</option>
                             <option value="USER">User</option>
                             <option value="ADMIN">Admin</option>
                             <option value="FACULTY">Faculty</option>
