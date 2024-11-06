@@ -5,11 +5,15 @@ import Account from "./Account";
 import Dashboard from "./Dashboard";
 import KanbasNavigation from "./Navigation";
 import Courses from "./Courses";
-// import * as ProtectedAccountRoute from "./Account/ProtectedRoute";
+import * as ProtectedAccountRoute from "./Account/ProtectedRoute";
 import store from "./store";
 import * as db from "./Database";
-// import * as ProtectedNavRoute from "./ProtectedRoute";
+import * as ProtectedNavRoute from "./ProtectedRoute";
 import "./styles.css";
+import { enrollCourse } from "./enrollmentReducer";
+import { useDispatch, useSelector } from "react-redux";
+
+
 
 // ProtectedRoute component
 interface ProtectedRouteProps {
@@ -35,6 +39,11 @@ function CourseRoute({ courses }: { courses: any[] }) {
 
 // Main Kanbas component
 export default function Kanbas() {
+  const dispatch = useDispatch();
+
+  const { currentUser } = useSelector((state: any) => state.accountReducer);
+
+
   const [courses, setCourses] = useState<any[]>(db.courses);
   const [course, setCourse] = useState<any>({
     _id: "1234",
@@ -46,9 +55,19 @@ export default function Kanbas() {
   });
 
   const addNewCourse = () => {
-    setCourses([...courses, { ...course, _id: new Date().getTime().toString() }]);
-  };
+    const newCourseId = new Date().getTime().toString();
+    const newCourse = { ...course, _id: newCourseId };
 
+    setCourses((prevCourses) => [...prevCourses, newCourse]);
+
+    dispatch(
+      enrollCourse({
+        _id: newCourseId, // Use the same ID for both the course and the enrollment
+        course: newCourseId, // Use the same course ID for the enrollment
+        user: currentUser?._id, // Add the current user's ID to the enrollment
+      })
+    );
+  };
   const deleteCourse = (courseId: any) => {
     setCourses(courses.filter((course) => course._id !== courseId));
   };
