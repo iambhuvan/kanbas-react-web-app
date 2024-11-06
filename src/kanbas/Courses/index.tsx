@@ -8,14 +8,16 @@ import AssignmentEditor from "./Assignments/Editor";
 import { FaAlignJustify } from "react-icons/fa";
 import PeopleTable from "./People/Table";
 
-export default function Courses() {
+export default function Courses({ courses }: { courses: any[]; }) {
   const { cid } = useParams();
   const course = courses.find((course) => course._id === cid);
   const { pathname } = useLocation();
   
+  // Split pathname and find the relevant segment
   const pathSegments = pathname.split("/");
-  const currentSegment = pathSegments[pathSegments.length - 1] || "Home"; 
+  const currentSegment = pathSegments[pathSegments.length - 1] || "Home"; // Get the last segment or default to "Home"
 
+  // Sanitize the current segment to remove any unwanted characters
   const sanitizedSegment = currentSegment.replace(/%60/g, "").replace(/[^\w\s]/g, "");
 
   return (

@@ -14,6 +14,10 @@ export default function KanbasNavigation() {
     { label: "Labs", path: "/Labs", icon: LiaCogSolid },
   ];
 
+  const isActive = (path: string) => {
+    return pathname.startsWith(path) ? 'bg-white text-danger' : 'bg-black text-white';
+};
+
   return (
     <div id="wd-kanbas-navigation" style={{width: 120}}
          className="list-group rounded-0 position-fixed bottom-0 top-0 d-none d-md-block bg-black z-2">
@@ -22,7 +26,7 @@ export default function KanbasNavigation() {
         <img src="/images/NEU.png" width="75px" alt="Northeastern University logo" />
       </a>
 
-      <Link to="/Kanbas/Account" className={`list-group-item text-center border-0 bg-black
+      <Link to="/Kanbas/Account/profile" className={`list-group-item text-center border-0 bg-black
             ${pathname.includes("Account") ? "bg-white text-danger" : "bg-black text-white"}`}>
         <FaRegCircleUser className={`fs-1 ${pathname.includes("Account") ? "text-danger" : "text-white"}`} />
         <br />
