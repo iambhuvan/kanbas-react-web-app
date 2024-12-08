@@ -1,7 +1,7 @@
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import Labs from "./Labs";
-import Kanbas from "./kanbas";
-import store from "./kanbas/store";
+import Kanbas from "./Kanbas";
+import store from "./Kanbas/store"
 import { Provider } from "react-redux";
 
 export default function App() {
